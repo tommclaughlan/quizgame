@@ -1,0 +1,9 @@
+<h1 *ngIf="buzzed">BUZZED!</h1>
+<div *ngIf="isRegistered()">
+    <p *ngIf="isRegistered()">{{ name }}</p>
+    <button (click)="buzz()">BUZZ</button>
+</div>
+<div *ngIf="!isRegistered()">
+    <input [(ngModel)]="inputName">
+    <button (click)="register(inputName)">Register</button>
+</div>

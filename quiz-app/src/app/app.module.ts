@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatInputModule, MatCardModule, MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { BuzzerComponent } from './buzzer/buzzer.component';
@@ -27,8 +29,13 @@ const APP_ROUTES = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    MatToolbarModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [

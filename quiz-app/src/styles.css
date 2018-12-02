@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.full-width {
+    width : 100%;
+}
+
+.content-center {
+    text-align: center;
+}
+
+.big-button {
+    width : 200px !important;
+    height : 200px !important;
+    font-size : 72px !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

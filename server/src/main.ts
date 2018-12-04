@@ -4,7 +4,15 @@ import * as path from "path";
 import * as nunjucks from "nunjucks";
 import * as session from "express-session";
 import * as bodyParser from "body-parser";
-import { Buzzer } from "./buzzer/buzzer";
+import { Game } from "./buzzer/buzzer";
+import { Server } from 'ws';
+
+export interface CommEvent {
+    action : string;
+    name? : string;
+    id? : number;
+    buzzed? : boolean;
+}
 
 class App {
     public app : Application;
@@ -33,17 +41,15 @@ class App {
         });
     }
 
-    private routes() {
+    public routes() {
         const router = express.Router();
 
         router.get("/", (req : Request, res : Response) => {
             res.render('index.njk');
         });
 
-        Buzzer.create(router);
-
         this.app.use(router);
     }
 }
 
-export default new App().app;
+export default new App();

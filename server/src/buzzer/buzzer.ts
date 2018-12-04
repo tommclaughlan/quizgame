@@ -1,59 +1,88 @@
-import { Request, Response, Router } from "express";
+import * as WebSocket from "ws";
+import { Server } from 'ws';
+import { CommEvent } from '../main';
 
-export class Buzzer {
+export interface Map<T> {
+    [key : number]: T;
+}
 
-    private static readonly baseUrl = '/api/buzzer';
+export interface Player {
+    name : string;
+    socket : WebSocket;
+}
+
+export class Game {
     private buzzed : boolean;
     private whoBuzzed : string;
+    private buzzerid : number;
+    private host : WebSocket;
+    private playerMap : Map<Player>;
 
     constructor() {
+        this.buzzerid = 0;
         this.buzzed = true;
         this.whoBuzzed = '';
+        this.playerMap = {};
     }
 
-    public static create(router : Router) {
-        const buzzer = new Buzzer();
-        router.get(this.baseUrl,  (req : Request, res : Response) => { buzzer.getBuzzer(req, res); });
-        router.post(this.baseUrl,  (req : Request, res : Response) => { buzzer.registerBuzzer(req, res); });
-        router.get(`${this.baseUrl}/buzz`, (req : Request, res : Response) => { buzzer.buzz(req, res); });
-        router.get(`${this.baseUrl}/who`, (req : Request, res : Response) => { buzzer.getWhoBuzzed(req, res); });
-        router.get(`${this.baseUrl}/reset`, (req : Request, res : Response) => { buzzer.resetBuzzer(req, res); });
+    public static create(wss : Server) {
+        const buzzer = new Game();
+
+        wss.on('connection', (ws : WebSocket) => {
+            ws.on('message', (msg : string) => {
+                const message = JSON.parse(msg) as CommEvent;
+                switch (message.action) {
+                    case 'register':
+                        buzzer.register(message.name, ws);
+                        break;
+                    case 'host':
+                        buzzer.registerHost(ws);
+                        break;
+                    case 'buzz':
+                        buzzer.buzz(message.id);
+                        break;
+                    case 'reset':
+                        buzzer.reset();
+                        break;
+                }
+            });
+        });
     }
 
-    public getBuzzer(req : Request, res : Response) {
-        res.send({ name : req.session.name });
-    }
-
-    public registerBuzzer(req : Request, res : Response) {
-        if (req.body.name) {
-            req.session.name = req.body.name;
-            req.session.save(err => console.log);
-        }
-        res.send({ name : req.session.name });
-    }
-
-    public buzz(req : Request, res : Response) {
-        if (this.buzzed) {
-            res.send(false);
-        } else {
+    public buzz(id : number) {
+        const player = this.playerMap[id];
+        let result = { action : 'buzzed', buzzed : false };
+        if (!this.buzzed) {
             this.buzzed = true;
-            this.whoBuzzed = req.session.name;
-            res.send(true);
+            this.whoBuzzed = player.name;
+            result.buzzed = true;
+        }
+        player.socket.send(JSON.stringify(result));
+
+        if (this.host) {
+            this.host.send(JSON.stringify({ action : 'buzzed', name : player.name }));
         }
     }
 
-    public getWhoBuzzed(req : Request, res : Response) {
-        if (this.buzzed) {
-            console.log(this.whoBuzzed);
-            res.send({ name : this.whoBuzzed });
-        } else {
-            res.send();
-        }
+    public registerHost(ws : WebSocket) {
+        this.host = ws;
+        ws.send(JSON.stringify({ action : 'host', success : true }));
     }
 
-    public resetBuzzer(req : Request, res : Response) {
+    public register(name : string, ws : WebSocket) {
+        const id = this.buzzerid++;
+
+        this.playerMap[id] = { name : name, socket : ws };
+
+        ws.send(JSON.stringify({
+            action : 'register',
+            id : id,
+            name : name
+        }));
+    }
+
+    public reset() {
         this.buzzed = false;
         this.whoBuzzed = '';
-        res.send();
     }
 }

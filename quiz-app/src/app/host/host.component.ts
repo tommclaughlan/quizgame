@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { BuzzerService } from '../buzzer/buzzer.service';
 import { HostService } from './host.service';
+import { WebSocketSubject } from 'rxjs/internal/observable/dom/WebSocketSubject';
+import { CommEvent } from '../../../../server/src/main';
 
 
 @Component({
@@ -8,34 +10,24 @@ import { HostService } from './host.service';
     templateUrl : './host.component.html'
 })
 export class HostComponent {
-    private interval;
     public who : string;
+    private socket$ : WebSocketSubject<CommEvent>;
 
     constructor(private buzzerService : BuzzerService, private hostService : HostService) {
         this.who = '';
-    }
 
-    public whoBuzzed() {
-        this.buzzerService.whoBuzzed().subscribe((result : any) => {
-            if (result) {
-                this.who = result.name;
-                clearInterval(this.interval);
-                this.interval = null;
+        this.socket$ = new WebSocketSubject('ws://localhost:3000');
+        this.socket$.subscribe((msg : CommEvent) => {
+            if (msg.action === 'buzzed') {
+                this.who = msg.name;
             }
         });
+        this.socket$.next({ action : 'host' });
     }
 
     public resetBuzzer() {
-        if (this.interval) {
-            clearInterval(this.interval);
-            this.interval = null;
-        }
         this.who = '';
-        this.buzzerService.resetBuzzer().subscribe(result => {
-            this.interval = setInterval(() => {
-                this.whoBuzzed();
-            }, 1000);
-        });
+        this.socket$.next({ action : 'reset' });
     }
 
     public givePoints(name : string, points? : number) {

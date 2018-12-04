@@ -1,20 +1,31 @@
-import { Component } from "@angular/core";
-import { BuzzerService } from './buzzer.service';
+import { Component } from '@angular/core';
+import { WebSocketSubject } from 'rxjs/internal/observable/dom/WebSocketSubject';
+import { CommEvent } from '../../../../server/src/main';
 
 @Component({
     selector : 'buzzer',
     templateUrl : './buzzer.component.html'
 })
 export class BuzzerComponent {
+    private id : number;
     public name : string;
     public buzzed : boolean;
 
-    constructor(private buzzerService : BuzzerService) {
+    private socket$ : WebSocketSubject<CommEvent>;
+
+    constructor() {
         this.buzzed = false;
 
-        buzzerService.hasBuzzer().subscribe((result : any) => {
-            if (result) {
-                this.name = result.name;
+        this.socket$ = new WebSocketSubject(`ws://localhost:3000`);
+        this.socket$.subscribe((msg : CommEvent) => {
+            if (msg.action === 'register') {
+                this.id = msg.id;
+                this.name = msg.name;
+            } else if (msg.action === 'buzzed') {
+                this.buzzed = msg.buzzed;
+                setTimeout(() => {
+                    this.buzzed = false;
+                }, 5000);
             }
         });
     }
@@ -24,17 +35,10 @@ export class BuzzerComponent {
     }
 
     public register(name : string) {
-        this.buzzerService.registerBuzzer(name).subscribe((result : any) => {
-            this.name = result.name;
-        });
+        this.socket$.next({ action : 'register', name : name });
     }
 
     public buzz() {
-        this.buzzerService.buzz().subscribe((result : boolean) => {
-            this.buzzed = result;
-            setTimeout(() => {
-                this.buzzed = false;
-            }, 5000);
-        });
+        this.socket$.next({ action : 'buzz', id : this.id });
     }
 }

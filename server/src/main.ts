@@ -4,14 +4,14 @@ import * as path from "path";
 import * as nunjucks from "nunjucks";
 import * as session from "express-session";
 import * as bodyParser from "body-parser";
-import { Game } from "./buzzer/buzzer";
-import { Server } from 'ws';
+import { Question } from '../../quiz-app/src/app/screen/screen.component';
 
 export interface CommEvent {
     action : string;
     name? : string;
     id? : number;
     buzzed? : boolean;
+    question? : Question;
 }
 
 class App {

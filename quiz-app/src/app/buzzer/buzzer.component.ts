@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WebSocketSubject } from 'rxjs/internal/observable/dom/WebSocketSubject';
 import { CommEvent } from '../../../../server/src/main';
+import { WebsocketService } from '../websocket.service';
 
 @Component({
     selector : 'buzzer',
@@ -13,10 +14,10 @@ export class BuzzerComponent {
 
     private socket$ : WebSocketSubject<CommEvent>;
 
-    constructor() {
+    constructor(public websocket : WebsocketService) {
         this.buzzed = false;
 
-        this.socket$ = new WebSocketSubject(`ws://localhost:3000`);
+        this.socket$ = websocket.openSocket();
         this.socket$.subscribe((msg : CommEvent) => {
             if (msg.action === 'register') {
                 this.id = msg.id;

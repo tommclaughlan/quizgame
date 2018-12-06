@@ -19,3 +19,22 @@
 .spacer {
     flex: 1 1 auto;
 }
+
+.screen-container {
+    text-align: center;
+    font-size: 42px;
+}
+
+.smash-image-container {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 32px;
+}
+
+.smash-image {
+    width : 100%;
+    height : auto;
+    display : block;
+}

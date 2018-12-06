@@ -1,6 +1,6 @@
 import main from './main';
 import { Server } from 'ws';
-import { Game } from './buzzer/buzzer';
+import { Game } from './game/game';
 
 const server = main.app.listen(3000, () => {
     console.log('Server listening on 3000');

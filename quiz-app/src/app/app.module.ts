@@ -13,12 +13,14 @@ import { HostComponent } from './host/host.component';
 import { HostService } from './host/host.service';
 import { ScreenComponent } from './screen/screen.component';
 import { ScreenService } from './screen/screen.service';
+import { WebsocketService } from './websocket.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const APP_ROUTES = [
   { path : 'buzzer', component : BuzzerComponent },
   { path : 'host', component : HostComponent },
   { path : 'screen', component : ScreenComponent }
-]
+];
 
 @NgModule({
   declarations: [
@@ -36,12 +38,14 @@ const APP_ROUTES = [
     MatInputModule,
     MatCardModule,
     MatToolbarModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    FlexLayoutModule
   ],
   providers: [
     BuzzerService,
     HostService,
-    ScreenService
+    ScreenService,
+    WebsocketService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,18 @@
-<h1>Quiz!</h1>
+<div class="screen-container">
+    <div *ngIf="getType() === 'answersmash'">
+        <mat-card class="content-center">
+            <mat-card-header>
+                <mat-card-title>Answer Smash</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div fxLayoutAlign="center">
+                    <div class="smash-image-container">
+                        <img class="smash-image" [src]="'assets/images/' + getQuestion().data.image">
+                    </div>
+                </div>
+                <p class="mat-display-2">{{getQuestion().data.question}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

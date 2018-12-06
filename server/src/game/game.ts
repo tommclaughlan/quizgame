@@ -23,7 +23,7 @@ export class Game {
     private currentQuestion : number; // index in the array
 
     constructor() {
-        this.buzzerid = 0;
+        this.buzzerid = 1;
         this.buzzed = true;
         this.whoBuzzed = '';
         this.playerMap = {};
@@ -41,6 +41,9 @@ export class Game {
                 switch (message.action) {
                     case 'register':
                         game.register(message.name, ws);
+                        break;
+                    case 'reconnect':
+                        game.reconnect(message.id, ws);
                         break;
                     case 'host':
                         game.registerHost(ws);
@@ -103,6 +106,22 @@ export class Game {
             id : id,
             name : name
         }));
+    }
+
+    public reconnect(id : number, ws : WebSocket) {
+        const player = this.playerMap[id];
+        if (player) {
+            player.socket = ws;
+            ws.send(JSON.stringify({
+                action : 'register',
+                id : id,
+                name : player.name
+            }));
+        } else {
+            ws.send(JSON.stringify({
+                action : 'reregister'
+            }));
+        }
     }
 
     public reset() {

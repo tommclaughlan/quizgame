@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatInputModule, MatCardModule, MatToolbarModule } from '@angular/material';
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 import { AppComponent } from './app.component';
 import { BuzzerComponent } from './buzzer/buzzer.component';
@@ -39,7 +40,11 @@ const APP_ROUTES = [
     MatCardModule,
     MatToolbarModule,
     RouterModule.forRoot(APP_ROUTES),
-    FlexLayoutModule
+    FlexLayoutModule,
+    LocalStorageModule.withConfig({
+        prefix : 'quiz',
+        storageType : 'localStorage'
+    })
   ],
   providers: [
     BuzzerService,

@@ -1,7 +1,7 @@
 import * as WebSocket from "ws";
 import { Server } from 'ws';
 import { CommEvent } from '../main';
-import { Question } from '../../../quiz-app/src/app/screen/screen.component';
+import { Question, Score } from '../../../quiz-app/src/app/screen/screen.component';
 
 export interface Map<T> {
     [key : number]: T;
@@ -10,6 +10,7 @@ export interface Map<T> {
 export interface Player {
     name : string;
     socket : WebSocket;
+    score : number;
 }
 
 export class Game {
@@ -60,12 +61,28 @@ export class Game {
                     case 'screen':
                         game.registerScreen(ws);
                         break;
+                    case 'scores':
+                        game.showScoreboard();
+                        break;
                 }
             });
         });
     }
 
-    public buzz(id : number) {
+    private getScores() {
+        const scoreboard : Score[] = [];
+
+        for (const id in this.playerMap) {
+            const player = this.playerMap[id];
+
+            if (player.socket.readyState === player.socket.OPEN) {
+                scoreboard.push({ name : player.name, id : id, score : player.score });
+            }
+        }
+        return { action : 'scores', scores : scoreboard };
+    }
+
+    public buzz(id : string) {
         const player = this.playerMap[id];
         let result = { action : 'buzzed', buzzed : false };
         if (!this.buzzed) {
@@ -80,15 +97,30 @@ export class Game {
         }
     }
 
+    public addPoints(id : number, points : number) {
+        this.playerMap[id].score += points;
+
+        if (this.host) {
+            this.host.send(JSON.stringify(this.getScores()));
+        }
+    }
+
     public nextQuestion() {
         if (this.screen) {
             this.screen.send(JSON.stringify({ action : 'question', question : this.questions[this.currentQuestion++]}));
         }
     }
 
+    public showScoreboard() {
+        if (this.screen) {
+            this.screen.send(JSON.stringify(this.getScores()));
+        }
+    }
+
     public registerHost(ws : WebSocket) {
         this.host = ws;
         ws.send(JSON.stringify({ action : 'host', success : true }));
+        ws.send(JSON.stringify(this.getScores()));
     }
 
     public registerScreen(ws : WebSocket) {
@@ -99,16 +131,20 @@ export class Game {
     public register(name : string, ws : WebSocket) {
         const id = this.buzzerid++;
 
-        this.playerMap[id] = { name : name, socket : ws };
+        this.playerMap[id] = { name : name, socket : ws, score : 0 };
 
         ws.send(JSON.stringify({
             action : 'register',
-            id : id,
+            id : `${id}`,
             name : name
         }));
+
+        if (this.host) {
+            this.host.send(JSON.stringify(this.getScores()));
+        }
     }
 
-    public reconnect(id : number, ws : WebSocket) {
+    public reconnect(id : string, ws : WebSocket) {
         const player = this.playerMap[id];
         if (player) {
             player.socket = ws;

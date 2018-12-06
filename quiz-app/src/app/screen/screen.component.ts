@@ -8,6 +8,12 @@ export interface Question {
     data : any;
 }
 
+export interface Score {
+    name : string;
+    id : string;
+    score : number;
+}
+
 @Component({
     selector : 'screen',
     templateUrl : './screen.component.html'
@@ -36,5 +42,4 @@ export class ScreenComponent {
     public getQuestion() {
         return this.question;
     }
-    
 }

@@ -2,3 +2,10 @@
 <p *ngIf="who">{{ who }} Buzzed</p>
 <button (click)="resetBuzzer()">Start</button>
 <button (click)="nextQuestion()">Next Question</button>
+<button (click)="showScoreboard()">Show Scores</button>
+
+<ul>
+    <li *ngFor="let score of scoreboard">
+        {{ score.name }} - {{ score.score }}
+    </li>
+</ul>

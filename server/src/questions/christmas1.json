@@ -1,0 +1,19 @@
+{
+    "quizname" : "Christmas Quiz 2018",
+    "questions" : [
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "gimli.jpeg",
+                "question" : "Which band had their only UK number 1 with \"Rollin'\"?"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "lula.jpeg",
+                "question" : "Which 2017 film saw Emma Stone win the Oscar for Best Actress?"
+            }
+        }
+    ]
+}

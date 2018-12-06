@@ -17,21 +17,13 @@ export class ScreenComponent {
     private socket$ : WebSocketSubject<CommEvent>;
 
     constructor(public websocket : WebsocketService) {
-        console.log('hello');
         this.socket$ = websocket.openSocket();
         this.socket$.subscribe((msg : CommEvent) => {
             if (msg.action === 'question') {
                 this.question = msg.question;
             }
         });
-
-        this.question = {
-            type : 'answersmash',
-            data : {
-                image : 'gimli.jpeg',
-                question : 'Which band had their only UK number 1 with "Rollin\'"?'
-            }
-        };
+        this.socket$.next({ action : 'screen' });
     }
 
     public getType() {

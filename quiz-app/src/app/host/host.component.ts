@@ -29,4 +29,8 @@ export class HostComponent {
         this.socket$.next({ action : 'reset' });
     }
 
+    public nextQuestion() {
+        this.socket$.next({ action : 'next' });
+    }
+
 }

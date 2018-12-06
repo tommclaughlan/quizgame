@@ -9,7 +9,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
     templateUrl : './buzzer.component.html'
 })
 export class BuzzerComponent {
-    private id : number;
+    private id : string;
     public name : string;
     public buzzed : boolean;
 
@@ -35,7 +35,7 @@ export class BuzzerComponent {
             }
         });
 
-        const localId : number = localStorageService.get('buzzerid');
+        const localId : string = localStorageService.get('buzzerid');
         if (localId) {
             this.reconnect(localId);
         }
@@ -49,7 +49,7 @@ export class BuzzerComponent {
         this.socket$.next({ action : 'register', name : name });
     }
 
-    public reconnect(id : number) {
+    public reconnect(id : string) {
         this.socket$.next({ action : 'reconnect', id : id });
     }
 

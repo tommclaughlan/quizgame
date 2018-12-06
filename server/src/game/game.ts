@@ -1,7 +1,7 @@
 import * as WebSocket from "ws";
 import { Server } from 'ws';
 import { CommEvent } from '../main';
-import { Question, Score } from '../../../quiz-app/src/app/screen/screen.component';
+import { Screen, Score } from '../../../quiz-app/src/app/screen/screen.component';
 
 export interface Map<T> {
     [key : number]: T;
@@ -20,7 +20,7 @@ export class Game {
     private host : WebSocket;
     private screen : WebSocket;
     private playerMap : Map<Player>;
-    private questions : Question[];
+    private questions : Screen[];
     private currentQuestion : number; // index in the array
 
     constructor() {

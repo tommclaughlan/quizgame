@@ -38,3 +38,7 @@
     height : auto;
     display : block;
 }
+
+table {
+    width : 100%;
+}

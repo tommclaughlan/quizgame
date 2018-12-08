@@ -15,6 +15,7 @@ import { HostService } from './host/host.service';
 import { ScreenComponent } from './screen/screen.component';
 import { ScreenService } from './screen/screen.service';
 import { WebsocketService } from './websocket.service';
+import { BackwardsPipe } from './screen/screen.pipes';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 const APP_ROUTES = [
@@ -28,7 +29,8 @@ const APP_ROUTES = [
     AppComponent,
     BuzzerComponent,
     HostComponent,
-    ScreenComponent
+    ScreenComponent,
+    BackwardsPipe
   ],
   imports: [
     BrowserModule,

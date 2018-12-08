@@ -7,8 +7,11 @@
 <button (click)="showAnswer()">Show Answer</button>
 <button (click)="showScoreboard()">Show Scores</button>
 
-<div *ngIf="questionNum + 1">
-    <p>Question Number : {{ questionNum + 1 }}</p>
+<div *ngIf="question && question.data">
+    <p>{{ question.data.question }}</p>
+    <p *ngIf="question.data.answer">
+        {{ question.data.answer }}
+    </p>
 </div>
 
 <ul>

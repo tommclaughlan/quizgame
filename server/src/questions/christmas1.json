@@ -2,6 +2,82 @@
     "quizname" : "Christmas Quiz 2018",
     "questions" : [
         {
+            "type" : "round",
+            "data" : {
+                "question" : "The Backwards Round"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "The Backwards Round",
+                "answer" : "Sports"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "question" : "Which football team plays their home games at Old Trafford?",
+                "answer" : "Manchester United"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "question" : "Who holds the record for the highest scoring average per game in NBA basketball?",
+                "answer" : "Michael Jordan"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "question" : "This year which Liverpool player became the youngest Englishman to start a Champions League Quarter Final game",
+                "answer" : "Trent Alexander Arnold"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "The Backwards Round",
+                "answer" : "Christmas Films"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "question" : "Who plays Buddy in the film Elf?",
+                "answer" : "Will Ferrell"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "question" : "Which classic Disney film are the Gremlins watching in the 1984 film?",
+                "answer" : "Snow White and the Seven Dwarfs"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "image" : "muppets.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "Muppets Christmas Carol"
+            }
+        },
+        {
+            "type" : "round",
+            "data" : {
+                "question" : "Answer Smash"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "Answer Smash",
+                "answer" : "Pets"
+            }
+        },
+        {
             "type" : "answersmash",
             "data" : {
                 "image" : "gimli.jpeg",
@@ -23,6 +99,37 @@
                 "image" : "bette.jpeg",
                 "question" : "Which alcoholic spirit is made primarily with agave nectar?",
                 "answer" : "Bettequila"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "Answer Smash",
+                "answer" : "Christmas Food"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "sprouts.jpg",
+                "question" : "Creative or lateral thinking is often referred to as thinking _ ?",
+                "answer" : "Brussels Sproutside the Box"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "pigsinblankets.jpg",
+                "question" : "What is the name for a large wave often produced after an earthquake?",
+                "answer" : "Pigs in Blanketsunami"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "turkey.jpg",
+                "question" : "In 1987, Lloyd Grossman visited the houses of celebrities, taking viewers Through The _ ?",
+                "answer" : "Roast Turkeyhole"
             }
         }
     ]

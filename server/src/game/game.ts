@@ -119,7 +119,7 @@ export class Game {
             this.currentQuestion++;
         }
         if (this.host) {
-            this.host.send(JSON.stringify({ action : 'question', questionNum : this.currentQuestion }));
+            this.host.send(JSON.stringify({ action : 'question', question : this.questions[this.currentQuestion] }));
         }
     }
 
@@ -128,7 +128,7 @@ export class Game {
             this.currentQuestion--;
         }
         if (this.host) {
-            this.host.send(JSON.stringify({ action : 'question', questionNum : this.currentQuestion }));
+            this.host.send(JSON.stringify({ action : 'question', question : this.questions[this.currentQuestion] }));
         }
     }
 
@@ -154,7 +154,7 @@ export class Game {
         this.host = ws;
         ws.send(JSON.stringify({ action : 'host', success : true }));
         ws.send(JSON.stringify(this.getScores()));
-        ws.send(JSON.stringify({ action : 'question', questionNum : this.currentQuestion }));
+        ws.send(JSON.stringify({ action : 'question', question : this.questions[this.currentQuestion] }));
     }
 
     public registerScreen(ws : WebSocket) {

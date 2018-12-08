@@ -2,10 +2,16 @@
     text-align: center;
     font-size: 42px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    height: fit-content;
+    height: -webkit-fill-available;
 }
 .mat-card {
     background: #e23c3c;
     color: #ffffff;
+}
+
+.fillHeight {
+    height: 100%;
 }
 
 .question {
@@ -17,8 +23,14 @@
     font-size: 42px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: 600;
-    transition: ease 1s;
-    -webkit-transition: ease 1s;
+}
+
+.answer {
+    visibility: hidden;
+}
+
+.reveal {
+    visibility: visible;
 }
 
 .smash-image-container {

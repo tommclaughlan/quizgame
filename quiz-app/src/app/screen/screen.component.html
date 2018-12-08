@@ -1,11 +1,11 @@
-<div class="screen-container">
-    <div *ngIf="getType() === 'scores'">
-        <mat-card class="content-center">
+<div class="screen-container" fxLayout="row">
+    <mat-card class="content-center" fxFlex="100">
+        <div *ngIf="getType() === 'scores'">
             <mat-card-header>
                 <mat-card-title>Scores</mat-card-title>
             </mat-card-header>
-            <mat-card-content>
-                <mat-table [dataSource]="getScreenData()" class="mat-elevation-z8">
+            <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+                <mat-table [dataSource]="getScreenData()" class="mat-elevation-z8" fxFlexAlign="center">
                     <ng-container matColumnDef="name">
                         <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{ row.name }}</mat-cell>
@@ -20,13 +20,22 @@
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                 </mat-table>
             </mat-card-content>
-        </mat-card>
-    </div>
-    <div *ngIf="getType() === 'answersmash'">
-        <mat-card class="content-center">
-            <mat-card-header>
-                <mat-card-title>Answer Smash</mat-card-title>
-            </mat-card-header>
+        </div>
+        <div *ngIf="getType() === 'round'" class="fillHeight">
+            <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
+                <div class="question" fxFlex fxFlexAlign="center">
+                    <p>{{getScreenData().question }}</p>
+                </div>
+            </mat-card-content>
+        </div>
+        <div *ngIf="getType() === 'category'" class="fillHeight">
+            <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
+                <div class="question" fxFlex fxFlexAlign="center">
+                    <p>{{getScreenData().answer }}</p>
+                </div>
+            </mat-card-content>
+        </div>
+        <div *ngIf="getType() === 'answersmash'" class="fillHeight">
             <mat-card-content>
                 <div fxLayoutAlign="center">
                     <div class="smash-image-container">
@@ -40,6 +49,23 @@
                     <p>{{ getScreenData().answer }}</p>
                 </div>
             </mat-card-content>
-        </mat-card>
-    </div>
+        </div>
+        <div *ngIf="getType() === 'backwards'" class="fillHeight">
+            <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
+                <div fxFlex fxFlexAlign="center">
+                    <div *ngIf="getScreenData().image" fxLayoutAlign="center">
+                        <div class="smash-image-container">
+                            <img class="smash-image" [src]="'assets/images/' + getScreenData().image">
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>{{getScreenData().question | backwards : true }}?</p>
+                    </div>
+                    <div [ngClass]="{ 'reveal' : reveal, 'answer' : !reveal }"  class="question">
+                        <p>{{ getScreenData().answer | backwards }}</p>
+                    </div>
+                </div>
+            </mat-card-content>
+        </div>
+    </mat-card>
 </div>

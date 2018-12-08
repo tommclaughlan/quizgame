@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { WebSocketSubject } from 'rxjs/internal/observable/dom/WebSocketSubject';
 import { CommEvent } from '../../../../server/src/main';
 import { WebsocketService } from '../websocket.service';
-import { Score } from '../screen/screen.component';
+import { Score, Screen } from '../screen/screen.component';
 
 @Component({
     selector : 'host',
@@ -11,7 +11,7 @@ import { Score } from '../screen/screen.component';
 export class HostComponent {
     public who : string;
     public scoreboard : Score[];
-    public questionNum : number;
+    public question : Screen;
     private socket$ : WebSocketSubject<CommEvent>;
 
     constructor(public websocket : WebsocketService) {
@@ -19,7 +19,6 @@ export class HostComponent {
 
         this.socket$ = websocket.openSocket();
         this.socket$.subscribe((msg : CommEvent) => {
-            console.log(msg);
             switch (msg.action) {
                 case 'buzzed':
                     this.who = msg.name;
@@ -28,7 +27,7 @@ export class HostComponent {
                     this.scoreboard = msg.scores;
                     break;
                 case 'question':
-                    this.questionNum = msg.questionNum;
+                    this.question = msg.question;
                     break;
             }
         });

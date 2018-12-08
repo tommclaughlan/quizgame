@@ -58,6 +58,15 @@ export class Game {
                     case 'next':
                         game.nextQuestion();
                         break;
+                    case 'prev':
+                        game.prevQuestion();
+                        break;
+                    case 'show':
+                        game.showQuestion();
+                        break;
+                    case 'reveal':
+                        game.showAnswer();
+                        break;
                     case 'screen':
                         game.registerScreen(ws);
                         break;
@@ -106,8 +115,32 @@ export class Game {
     }
 
     public nextQuestion() {
+        if (this.currentQuestion < this.questions.length - 1) {
+            this.currentQuestion++;
+        }
+        if (this.host) {
+            this.host.send(JSON.stringify({ action : 'question', questionNum : this.currentQuestion }));
+        }
+    }
+
+    public prevQuestion() {
+        if (this.currentQuestion > 0) {
+            this.currentQuestion--;
+        }
+        if (this.host) {
+            this.host.send(JSON.stringify({ action : 'question', questionNum : this.currentQuestion }));
+        }
+    }
+
+    public showQuestion() {
         if (this.screen) {
-            this.screen.send(JSON.stringify({ action : 'question', question : this.questions[this.currentQuestion++]}));
+            this.screen.send(JSON.stringify({ action : 'screen', question : this.questions[this.currentQuestion]}));
+        }
+    }
+
+    public showAnswer() {
+        if (this.screen) {
+            this.screen.send(JSON.stringify({ action : 'reveal' }));
         }
     }
 
@@ -121,6 +154,7 @@ export class Game {
         this.host = ws;
         ws.send(JSON.stringify({ action : 'host', success : true }));
         ws.send(JSON.stringify(this.getScores()));
+        ws.send(JSON.stringify({ action : 'question', questionNum : this.currentQuestion }));
     }
 
     public registerScreen(ws : WebSocket) {

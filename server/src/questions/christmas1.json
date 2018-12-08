@@ -5,14 +5,24 @@
             "type" : "answersmash",
             "data" : {
                 "image" : "gimli.jpeg",
-                "question" : "Which band had their only UK number 1 with \"Rollin'\"?"
+                "question" : "Which band had their only UK number 1 with \"Rollin'\"?",
+                "answer" : "Gimlimp Bizkit"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "lula.jpeg",
-                "question" : "Which 2017 film saw Emma Stone win the Oscar for Best Actress?"
+                "image" : "lula.jpg",
+                "question" : "Which 2017 film saw Emma Stone win the Oscar for Best Actress?",
+                "answer" : "Lula La Land"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "bette.jpeg",
+                "question" : "Which alcoholic spirit is made primarily with agave nectar?",
+                "answer" : "Bettequila"
             }
         }
     ]

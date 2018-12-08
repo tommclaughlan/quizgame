@@ -11,6 +11,7 @@ import { Score } from '../screen/screen.component';
 export class HostComponent {
     public who : string;
     public scoreboard : Score[];
+    public questionNum : number;
     private socket$ : WebSocketSubject<CommEvent>;
 
     constructor(public websocket : WebsocketService) {
@@ -26,6 +27,9 @@ export class HostComponent {
                 case 'scores':
                     this.scoreboard = msg.scores;
                     break;
+                case 'question':
+                    this.questionNum = msg.questionNum;
+                    break;
             }
         });
         this.socket$.next({ action : 'host' });
@@ -38,6 +42,18 @@ export class HostComponent {
 
     public nextQuestion() {
         this.socket$.next({ action : 'next' });
+    }
+
+    public prevQuestion() {
+        this.socket$.next({ action : 'prev' });
+    }
+    
+    public showQuestion() {
+        this.socket$.next({ action : 'show' });
+    }
+
+    public showAnswer() {
+        this.socket$.next({ action : 'reveal' });
     }
 
     public showScoreboard() {

@@ -34,6 +34,7 @@
                     </div>
                 </div>
                 <p class="mat-display-2">{{getScreenData().question}}</p>
+                <p *ngIf="reveal" class="mat-display-2">{{ getScreenData().answer }}</p>
             </mat-card-content>
         </mat-card>
     </div>

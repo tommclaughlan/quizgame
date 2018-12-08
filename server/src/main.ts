@@ -12,6 +12,7 @@ export interface CommEvent {
     id? : string;
     buzzed? : boolean;
     question? : Screen;
+    questionNum? : number;
     scores? : Score[];
 }
 

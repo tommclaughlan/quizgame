@@ -1,11 +1,19 @@
 <h1>Gameshow Host!</h1>
 <p *ngIf="who">{{ who }} Buzzed</p>
 <button (click)="resetBuzzer()">Start</button>
+<button (click)="prevQuestion()">Previous Question</button>
 <button (click)="nextQuestion()">Next Question</button>
+<button (click)="showQuestion()">Show Question</button>
+<button (click)="showAnswer()">Show Answer</button>
 <button (click)="showScoreboard()">Show Scores</button>
+
+<div *ngIf="questionNum + 1">
+    <p>Question Number : {{ questionNum + 1 }}</p>
+</div>
 
 <ul>
     <li *ngFor="let score of scoreboard">
         {{ score.name }} - {{ score.score }}
     </li>
 </ul>
+

@@ -14,7 +14,7 @@ export class HostComponent {
     public scoreboard : Score[];
     public question : Screen;
     private socket$ : WebSocketSubject<CommEvent>;
-    public displayedColumns : string[] = ['name', 'score'];
+    public displayedColumns : string[] = ['name', 'score', 'points'];
 
     constructor(public websocket : WebsocketService) {
         this.who = '';
@@ -43,10 +43,12 @@ export class HostComponent {
 
     public nextQuestion() {
         this.socket$.next({ action : 'next' });
+        this.showQuestion();
     }
 
     public prevQuestion() {
         this.socket$.next({ action : 'prev' });
+        this.showQuestion();
     }
     
     public showQuestion() {
@@ -59,6 +61,14 @@ export class HostComponent {
 
     public showScoreboard() {
         this.socket$.next({ action : 'scores' });
+    }
+
+    public addPoint(id : string) {
+        this.socket$.next({ action : 'add_point', id : id });
+    }
+
+    public removePoint(id : string) {
+        this.socket$.next({ action : 'remove_point', id : id });
     }
 
 }

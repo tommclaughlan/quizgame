@@ -43,24 +43,29 @@
                     <mat-header-cell *matHeaderCellDef>Score</mat-header-cell>
                     <mat-cell *matCellDef="let row"> {{ row.score }}</mat-cell>
                 </ng-container>
+                
+                <ng-container matColumnDef="points">
+                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                    <mat-cell *matCellDef="let row" fxLayout="row">
+                        <div fxFlex>
+                            <button mat-fab (click)="addPoint(row.id)" ><mat-icon>add</mat-icon></button>
+                        </div>
+                        <div fxFlex>
+                            <button mat-fab (click)="removePoint(row.id)" ><mat-icon>remove</mat-icon></button>
+                        </div>
+                    </mat-cell>
+                </ng-container>
 
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
             </mat-table>
-            <ul>
-                <li *ngFor="let score of scoreboard">
-                    {{ score.name }} - {{ score.score }}
-                </li>
-            </ul>
         </div>
     </mat-card-content>
     <div fxFlex></div>
     <mat-card-actions>
         <button mat-button (click)="prevQuestion()">PREV</button>
         <div fxFlex></div>
-        <button mat-button (click)="showQuestion()">QUESTION</button>
-        <div fxFlex></div>
-        <button mat-button (click)="showAnswer()">ANSWER</button>
+        <button mat-button (click)="showAnswer()">SHOW ANSWER</button>
         <div fxFlex></div>
         <button mat-button (click)="nextQuestion()">NEXT</button>
     </mat-card-actions>

@@ -70,9 +70,16 @@ export class Game {
                         break;
                     case 'screen':
                         game.registerScreen(ws);
+                        game.showQuestion();
                         break;
                     case 'scores':
                         game.showScoreboard();
+                        break;
+                    case 'add_point':
+                        game.addPoints(message.id, 1);
+                        break;
+                    case 'remove_point':
+                        game.addPoints(message.id, -1);
                         break;
                 }
             });
@@ -107,7 +114,7 @@ export class Game {
         }
     }
 
-    public addPoints(id : number, points : number) {
+    public addPoints(id : string, points : number) {
         this.playerMap[id].score += points;
 
         if (this.host) {

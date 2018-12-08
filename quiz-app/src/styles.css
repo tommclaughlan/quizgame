@@ -2,6 +2,7 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 body {
     background: #000000;
@@ -11,6 +12,14 @@ body {
 
 .full-width {
     width : 100%;
+}
+
+.fillHeight {
+    height: 100%;
+}
+
+.fillAvailable {
+    height: calc(100vh - 64px - 16px);
 }
 
 .content-center {

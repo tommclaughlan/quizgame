@@ -1,0 +1,17 @@
+.smash-image-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 32px;
+}
+
+.smash-image {
+    width : 100%;
+    height : auto;
+    display : block;
+}
+
+.screen-data {
+    font-size: 32px;
+}

@@ -63,6 +63,7 @@ export class Game {
                         break;
                     case 'show':
                         game.showQuestion();
+                        game.reset();
                         break;
                     case 'reveal':
                         game.showAnswer();

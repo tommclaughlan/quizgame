@@ -6,13 +6,15 @@ import { Score, Screen } from '../screen/screen.component';
 
 @Component({
     selector : 'host',
-    templateUrl : './host.component.html'
+    templateUrl : './host.component.html',
+    styleUrls : ['./host.styles.css']
 })
 export class HostComponent {
     public who : string;
     public scoreboard : Score[];
     public question : Screen;
     private socket$ : WebSocketSubject<CommEvent>;
+    public displayedColumns : string[] = ['name', 'score'];
 
     constructor(public websocket : WebsocketService) {
         this.who = '';

@@ -4,7 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule, MatCardModule, MatToolbarModule, MatTableModule } from '@angular/material';
+import { 
+  MatButtonModule,
+  MatInputModule,
+  MatCardModule,
+  MatToolbarModule,
+  MatTableModule,
+  MatIconModule,
+  MatDividerModule } from '@angular/material';
 import { LocalStorageModule } from 'angular-2-local-storage';
 
 import { AppComponent } from './app.component';
@@ -42,6 +49,8 @@ const APP_ROUTES = [
     MatCardModule,
     MatToolbarModule,
     MatTableModule,
+    MatIconModule,
+    MatDividerModule,
     RouterModule.forRoot(APP_ROUTES),
     FlexLayoutModule,
     LocalStorageModule.withConfig({

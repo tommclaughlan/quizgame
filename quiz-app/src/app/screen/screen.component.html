@@ -33,8 +33,12 @@
                         <img class="smash-image" [src]="'assets/images/' + getScreenData().image">
                     </div>
                 </div>
-                <p class="mat-display-2">{{getScreenData().question}}</p>
-                <p *ngIf="reveal" class="mat-display-2">{{ getScreenData().answer }}</p>
+                <div class="question">
+                    <p>{{getScreenData().question}}</p>
+                </div>
+                <div *ngIf="reveal" class="question">
+                    <p>{{ getScreenData().answer }}</p>
+                </div>
             </mat-card-content>
         </mat-card>
     </div>

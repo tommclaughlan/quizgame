@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
 
 .full-width {
     width : 100%;
@@ -18,25 +25,6 @@
 
 .spacer {
     flex: 1 1 auto;
-}
-
-.screen-container {
-    text-align: center;
-    font-size: 42px;
-}
-
-.smash-image-container {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 32px;
-}
-
-.smash-image {
-    width : 100%;
-    height : auto;
-    display : block;
 }
 
 table {

@@ -16,7 +16,8 @@ export interface Score {
 
 @Component({
     selector : 'screen',
-    templateUrl : './screen.component.html'
+    templateUrl : './screen.component.html',
+    styleUrls : ['./screen.styles.css']
 })
 export class ScreenComponent {
     public screen : Screen;

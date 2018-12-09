@@ -152,6 +152,40 @@
                 "question" : "In 1987, Lloyd Grossman visited the houses of celebrities, taking viewers Through The _ ?",
                 "answer" : "Roast Turkeyhole"
             }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "Answer Smash",
+                "answer" : "Christmas Songs"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "song.jpg",
+                "question" : "What is the name given to the savoury side dish consisting of a pancake-like batter baked in the oven?",
+                "answer" : "Fairytale of New Yorkshire Pudding",
+                "song" : "fairytaleofnewyork.mp3"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "song.jpg",
+                "question" : "What is the name given to the practice of moving the clocks forward during the summer?",
+                "answer" : "I Wish It Could Be Christmas Every Daylight Savings Time",
+                "song" : "iwishitcouldbechristmas.mp3"
+            }
+        },
+        {
+            "type" : "answersmash",
+            "data" : {
+                "image" : "song.jpg",
+                "question" : "What Tim Burton film about Halloween and Christmas has a lead character called Jack Skellington?",
+                "answer" : "Silent Nightmare Before Christmas",
+                "song" : "silentnight.mp3"
+            }
         }
     ]
 }

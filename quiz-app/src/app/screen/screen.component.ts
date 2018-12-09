@@ -37,6 +37,9 @@ export class ScreenComponent {
                 case 'screen':
                     this.reveal = false;
                     this.screen = msg.question;
+                    if (msg.question && msg.question.data && msg.question.data.song) {
+                        this.playAudio(msg.question.data.song);
+                    }
                     break;
                 case 'scores':
                     this.screen = {

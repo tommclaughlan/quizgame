@@ -17,34 +17,6 @@
             "type" : "category",
             "data" : {
                 "question" : "The Backwards Round",
-                "answer" : "Sports"
-            }
-        },
-        {
-            "type" : "backwards",
-            "data" : {
-                "question" : "Which football team plays their home games at Old Trafford?",
-                "answer" : "Manchester United"
-            }
-        },
-        {
-            "type" : "backwards",
-            "data" : {
-                "question" : "Who holds the record for the highest scoring average per game in NBA basketball?",
-                "answer" : "Michael Jordan"
-            }
-        },
-        {
-            "type" : "backwards",
-            "data" : {
-                "question" : "This year which Liverpool player became the youngest Englishman to start a Champions League Quarter Final game",
-                "answer" : "Trent Alexander Arnold"
-            }
-        },
-        {
-            "type" : "category",
-            "data" : {
-                "question" : "The Backwards Round",
                 "answer" : "Christmas Films"
             }
         },
@@ -68,6 +40,49 @@
                 "image" : "muppets.jpg",
                 "question" : "What is the name of this film?",
                 "answer" : "Muppets Christmas Carol"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "The Backwards Round",
+                "answer" : "Christmas Songs"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "image" : "song.jpg",
+                "question" : "Name that song?",
+                "answer" : "Driving Home For Christmas",
+                "song" : "drivinghomeforchristmas.mp3"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "image" : "song.jpg",
+                "question" : "Name that song?",
+                "answer" : "Last Christmas",
+                "song" : "lastchristmas.mp3"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "image" : "song.jpg",
+                "question" : "Name that song?",
+                "answer" : "All I Want For Christmas Is You",
+                "song" : "alliwantforchristmas.mp3"
+            }
+        },
+        {
+            "type" : "backwards",
+            "data" : {
+                "image" : "song.jpg",
+                "question" : "Name that song?",
+                "answer" : "Rockin' around the Christmas Tree",
+                "song" : "rockinaroundthechristmastree.mp3"
             }
         },
         {

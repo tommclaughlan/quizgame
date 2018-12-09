@@ -20,15 +20,15 @@
                 </div>
                 <div *ngIf="question.type !== 'backwards'">
                     <p>{{ question.data.question }}</p>
-                    <p *ngIf="question.data.answer">
-                        {{ question.data.answer }}
-                    </p>
+                    <div *ngIf="question.data.answer">
+                        <p>{{ question.data.answer }}</p>
+                    </div>
                 </div>
                 <div *ngIf="question.type === 'backwards'">
                     <p>{{ question.data.question | backwards : true }}?</p>
-                    <p *ngIf="question.data.answer">
-                        {{ question.data.answer | backwards }}
-                    </p>
+                    <div *ngIf="question.data.answer">
+                        <p>{{ question.data.answer | backwards }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <mat-table [dataSource]="scoreboard" class="mat-elevation-z8" fxFlexAlign="center">
                 <ng-container matColumnDef="name">
                     <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-                    <mat-cell *matCellDef="let row"> {{ row.name }}</mat-cell>
+                    <mat-cell *matCellDef="let row"> {{ row.name }} <mat-icon *ngIf="row.locked">lock</mat-icon></mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="score">
@@ -66,6 +66,8 @@
         <button mat-button (click)="prevQuestion()">PREV</button>
         <div fxFlex></div>
         <button mat-button (click)="showAnswer()">SHOW ANSWER</button>
+        <div fxFlex></div>
+        <button mat-button (click)="incorrect()">WRONG</button>
         <div fxFlex></div>
         <button mat-button (click)="nextQuestion()">NEXT</button>
     </mat-card-actions>

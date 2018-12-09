@@ -60,6 +60,10 @@ export class HostComponent {
         this.socket$.next({ action : 'reveal' });
     }
 
+    public incorrect() {
+        this.socket$.next({ action : 'incorrect' });
+    }
+
     public showScoreboard() {
         this.socket$.next({ action : 'scores' });
     }

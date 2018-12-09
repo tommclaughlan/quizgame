@@ -2,6 +2,12 @@
     "quizname" : "Christmas Quiz 2018",
     "questions" : [
         {
+            "type" : "intro",
+            "data" : {
+                "question" : "Christmas Quiz 2018!"
+            }
+        },
+        {
             "type" : "round",
             "data" : {
                 "question" : "The Backwards Round"

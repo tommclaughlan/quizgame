@@ -10,6 +10,7 @@ export interface CommEvent {
     action : string;
     name? : string;
     id? : string;
+    sound? : string;
     buzzed? : boolean;
     question? : Screen;
     questionNum? : number;

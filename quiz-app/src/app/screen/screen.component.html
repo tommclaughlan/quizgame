@@ -1,4 +1,7 @@
-<div class="screen-container" fxLayout="row">
+<div *ngIf="!ready">
+    <button mat-button (click)="startGame()">Start Game</button>
+</div>
+<div *ngIf="ready" class="screen-container" fxLayout="row">
     <mat-card class="content-center" fxFlex="100">
         <div *ngIf="getType() === 'scores'">
             <ul class="scoreboard">
@@ -11,8 +14,15 @@
                     </span>
                 </li>
             </ul>
-
         </div>
+        <div *ngIf="getType() === 'intro'" class="fillHeight">
+                <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
+                    <div class="title-background"></div>
+                    <div class="title" fxFlex fxFlexAlign="center">
+                        <p>{{getScreenData().question }}</p>
+                    </div>
+                </mat-card-content>
+            </div>
         <div *ngIf="getType() === 'round'" class="fillHeight">
             <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
                 <div class="question" fxFlex fxFlexAlign="center">

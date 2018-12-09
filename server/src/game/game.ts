@@ -11,23 +11,29 @@ export interface Player {
     name : string;
     socket : WebSocket;
     score : number;
+    sound : string;
+    locked : boolean;
 }
 
 export class Game {
     private buzzed : boolean;
     private whoBuzzed : string;
+    private locked : string[];
     private buzzerid : number;
     private host : WebSocket;
     private screen : WebSocket;
     private playerMap : Map<Player>;
     private questions : Screen[];
     private currentQuestion : number; // index in the array
+    private sounds : string[];
 
     constructor() {
+        this.locked = [];
         this.buzzerid = 1;
         this.buzzed = true;
         this.whoBuzzed = '';
         this.playerMap = {};
+        this.sounds = ['1','2','3','4','5','6','7','8','9']; // corresponding to wavs in the src/assets/sounds folder
 
         this.questions = require('../questions/christmas1.json').questions;
         this.currentQuestion = 0;
@@ -68,6 +74,9 @@ export class Game {
                     case 'reveal':
                         game.showAnswer();
                         break;
+                    case 'incorrect':
+                        game.incorrect();
+                        break;
                     case 'screen':
                         game.registerScreen(ws);
                         game.showQuestion();
@@ -93,7 +102,7 @@ export class Game {
             const player = this.playerMap[id];
 
             if (player.socket.readyState === player.socket.OPEN) {
-                scoreboard.push({ name : player.name, id : id, score : player.score });
+                scoreboard.push({ name : player.name, id : id, score : player.score, locked : player.locked });
             }
         }
         return { action : 'scores', scores : scoreboard };
@@ -102,15 +111,18 @@ export class Game {
     public buzz(id : string) {
         const player = this.playerMap[id];
         let result = { action : 'buzzed', buzzed : false };
-        if (!this.buzzed) {
+        if (!this.buzzed && !player.locked) {
             this.buzzed = true;
-            this.whoBuzzed = player.name;
+            this.whoBuzzed = id;
             result.buzzed = true;
         }
         player.socket.send(JSON.stringify(result));
 
         if (this.host) {
             this.host.send(JSON.stringify({ action : 'buzzed', name : player.name }));
+        }
+        if (this.screen) {
+            this.screen.send(JSON.stringify({ action : 'buzz', sound : player.sound }));
         }
     }
 
@@ -141,14 +153,40 @@ export class Game {
     }
 
     public showQuestion() {
+        for (let id in this.playerMap) {
+            this.playerMap[id].locked = false;
+        }
+
         if (this.screen) {
-            this.screen.send(JSON.stringify({ action : 'screen', question : this.questions[this.currentQuestion]}));
+            const currentQuestion = this.questions[this.currentQuestion];
+            this.screen.send(JSON.stringify({ action : 'screen', question : currentQuestion}));
+            if (currentQuestion.type === 'round') {
+                this.screen.send(JSON.stringify({ action : 'round' }));
+            } else if (currentQuestion.type === 'category') {
+                this.screen.send(JSON.stringify({ action : 'category' }));
+            }
+        }
+        
+        if (this.host) {
+            this.host.send(JSON.stringify(this.getScores()));
         }
     }
 
     public showAnswer() {
         if (this.screen) {
             this.screen.send(JSON.stringify({ action : 'reveal' }));
+        }
+    }
+
+    public incorrect() {
+        if (this.whoBuzzed) {
+            this.playerMap[this.whoBuzzed].locked = true;
+        }
+        if (this.screen) {
+            this.screen.send(JSON.stringify({ action : 'incorrect' }));
+        }
+        if (this.host) {
+            this.host.send(JSON.stringify(this.getScores()));
         }
     }
 
@@ -173,7 +211,11 @@ export class Game {
     public register(name : string, ws : WebSocket) {
         const id = this.buzzerid++;
 
-        this.playerMap[id] = { name : name, socket : ws, score : 0 };
+        const soundIndex = Math.floor(Math.random() * this.sounds.length);
+        const sound : string = this.sounds.splice(soundIndex, 1)[0] + '.wav';
+
+        this.playerMap[id] = { name : name, socket : ws, score : 0, sound : sound, locked : false };
+        console.log(sound);
 
         ws.send(JSON.stringify({
             action : 'register',

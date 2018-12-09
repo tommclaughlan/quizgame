@@ -115,15 +115,15 @@ export class Game {
             this.buzzed = true;
             this.whoBuzzed = id;
             result.buzzed = true;
+            
+            if (this.host) {
+                this.host.send(JSON.stringify({ action : 'buzzed', name : player.name }));
+            }
+            if (this.screen) {
+                this.screen.send(JSON.stringify({ action : 'buzz', sound : player.sound }));
+            }
         }
         player.socket.send(JSON.stringify(result));
-
-        if (this.host) {
-            this.host.send(JSON.stringify({ action : 'buzzed', name : player.name }));
-        }
-        if (this.screen) {
-            this.screen.send(JSON.stringify({ action : 'buzz', sound : player.sound }));
-        }
     }
 
     public addPoints(id : string, points : number) {

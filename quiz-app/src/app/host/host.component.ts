@@ -52,6 +52,7 @@ export class HostComponent {
     }
     
     public showQuestion() {
+        this.who = '';
         this.socket$.next({ action : 'show' });
     }
 

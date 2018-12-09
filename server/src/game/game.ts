@@ -200,6 +200,10 @@ export class Game {
                 action : 'reregister'
             }));
         }
+        
+        if (this.host) {
+            this.host.send(JSON.stringify(this.getScores()));
+        }
     }
 
     public reset() {

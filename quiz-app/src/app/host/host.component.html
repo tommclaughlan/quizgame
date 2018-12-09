@@ -48,10 +48,10 @@
                     <mat-header-cell *matHeaderCellDef></mat-header-cell>
                     <mat-cell *matCellDef="let row" fxLayout="row">
                         <div fxFlex>
-                            <button mat-fab (click)="addPoint(row.id)" ><mat-icon>add</mat-icon></button>
+                            <button mat-mini-fab (click)="addPoint(row.id)" ><mat-icon>add</mat-icon></button>
                         </div>
                         <div fxFlex>
-                            <button mat-fab (click)="removePoint(row.id)" ><mat-icon>remove</mat-icon></button>
+                            <button mat-mini-fab (click)="removePoint(row.id)" ><mat-icon>remove</mat-icon></button>
                         </div>
                     </mat-cell>
                 </ng-container>

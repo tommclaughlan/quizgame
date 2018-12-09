@@ -11,7 +11,8 @@ import {
   MatToolbarModule,
   MatTableModule,
   MatIconModule,
-  MatDividerModule } from '@angular/material';
+  MatDividerModule
+} from '@angular/material';
 import { LocalStorageModule } from 'angular-2-local-storage';
 
 import { AppComponent } from './app.component';

@@ -28,7 +28,7 @@ export class BuzzerComponent {
                 this.buzzed = msg.buzzed;
                 setTimeout(() => {
                     this.buzzed = false;
-                }, 5000);
+                }, 3000);
             } else if (msg.action === 'reregister') {
                 // if the server can't reconnect us we have stale state - remove the buzzer id and connect fresh
                 localStorageService.remove('buzzerid');

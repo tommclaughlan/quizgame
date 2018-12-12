@@ -25,14 +25,14 @@
             </div>
         <div *ngIf="getType() === 'round'" class="fillHeight">
             <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
-                <div class="question" fxFlex fxFlexAlign="center">
+                <div class="question question-margin" fxFlex fxFlexAlign="center">
                     <p>{{getScreenData().question }}</p>
                 </div>
             </mat-card-content>
         </div>
         <div *ngIf="getType() === 'category'" class="fillHeight">
             <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
-                <div class="question" fxFlex fxFlexAlign="center">
+                <div class="question question-margin" fxFlex fxFlexAlign="center">
                     <p>{{getScreenData().answer }}</p>
                 </div>
             </mat-card-content>
@@ -44,11 +44,26 @@
                         <img class="smash-image" [src]="'assets/images/' + getScreenData().image">
                     </div>
                 </div>
-                <div *ngIf="!reveal" class="question">
+                <div *ngIf="!reveal" class="question question-margin">
                     <p>{{getScreenData().question}}</p>
                 </div>
-                <div *ngIf="reveal" class="question">
+                <div *ngIf="reveal" class="question question-margin">
                     <p>{{ getScreenData().answer }}</p>
+                </div>
+            </mat-card-content>
+        </div>
+        <div *ngIf="getType() === 'cinenyms'" class="fillHeight">
+            <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
+                <div fxFlex fxFlexAlign="center">
+                    <div *ngIf="!reveal" class="question question-margin">
+                        <p>{{getScreenData().question }}?</p>
+                    </div>
+                    <div *ngIf="reveal" class="question question-margin">
+                        <p>{{ getScreenData().hint }}</p>
+                    </div>
+                    <div *ngIf="reveal" class="question question-margin">
+                        <p>{{ getScreenData().answer }}</p>
+                    </div>
                 </div>
             </mat-card-content>
         </div>
@@ -60,10 +75,10 @@
                             <img class="smash-image" [src]="'assets/images/' + getScreenData().image">
                         </div>
                     </div>
-                    <div *ngIf="!reveal" class="question">
+                    <div *ngIf="!reveal" class="question question-margin">
                         <p>{{getScreenData().question | backwards : true }}?</p>
                     </div>
-                    <div *ngIf="reveal" class="question">
+                    <div *ngIf="reveal" class="question question-margin">
                         <p>{{ getScreenData().answer | backwards }}</p>
                     </div>
                 </div>

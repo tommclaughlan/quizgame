@@ -30,8 +30,8 @@
         {
             "type" : "backwards",
             "data" : {
-                "question" : "Which classic Disney film are the Gremlins watching in the 1984 film?",
-                "answer" : "Snow White and the Seven Dwarfs"
+                "question" : "What Christmas film starts Macaulay Culkin as Kevin McCallister?",
+                "answer" : "Home Alone"
             }
         },
         {
@@ -77,12 +77,57 @@
             }
         },
         {
-            "type" : "backwards",
+            "type" : "round",
             "data" : {
-                "image" : "song.jpg",
-                "question" : "Name that song?",
-                "answer" : "Rockin' around the Christmas Tree",
-                "song" : "rockinaroundthechristmastree.mp3"
+                "question" : "Cine-nyms"
+            }
+        },
+        {
+            "type" : "cinenyms",
+            "data" : {
+                "question" : "Bluntly, darling, I couldn't care less",
+                "hint" : "Frankly, my dear, I don't give a damn",
+                "answer" : "Gone With The Wind"
+            }
+        },
+        {
+            "type" : "cinenyms",
+            "data" : {
+                "question" : "The primary instruction, the instruction you must remember, despite his frequent whining, despite his frequent imploring, don't ever nourish him post the bewitching hour",
+                "hint" : "The most important rule, the rule you can never forget, no matter how much he cries, no matter how much he begs, never feed him after midnight.",
+                "answer" : "Gremlins"
+            }
+        },
+        {
+            "type" : "cinenyms",
+            "data" : {
+                "question" : "I shall prepare the gentleman a proposition he cannot decline",
+                "hint" : "I'll make him an offer he can't refuse",
+                "answer" : "The Godfather"
+            }
+        },
+        {
+            "type" : "cinenyms",
+            "data" : {
+                "question" : "You were merely meant to knock the blasted portals away",
+                "hint" : "You're only supposed to blow the bloody doors off",
+                "answer" : "The Italian Job"
+            }
+        },
+        {
+            "type" : "cinenyms",
+            "data" : {
+                "question" : "I perceive deceased folk",
+                "hint" : "I see dead people",
+                "answer" : "The Sixth Sense"
+            }
+        },
+        {
+            "type" : "cinenyms",
+            "data" : {
+                "question" : "There is nowhere else similar to my place of residence",
+                "hint" : "There's no place like home",
+                "answer" : "The Wizard of Oz"
             }
         },
         {

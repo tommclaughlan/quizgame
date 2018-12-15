@@ -179,6 +179,7 @@ export class Game {
     }
 
     public incorrect() {
+        this.buzzed = false;
         if (this.whoBuzzed) {
             this.playerMap[this.whoBuzzed].locked = true;
         }

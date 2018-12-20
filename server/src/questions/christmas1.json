@@ -10,6 +10,122 @@
         {
             "type" : "round",
             "data" : {
+                "question" : "Under the Covers"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "Under the Covers",
+                "answer" : "Movie Posters"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/bttf.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "Back to the Future"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/casablanca.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "Casablanca"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/silenceofthelambs.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "The Silence of the Lambs"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/alien.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "Alien"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/soundofmusic.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "The Sound of Music"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/gladiator.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "Gladiator"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "Under the Covers",
+                "answer" : "Album Covers"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "albums/abbeyroad.jpg",
+                "question" : "What is the name of the artist and/or album?",
+                "answer" : "Abbey Road - The Beatles"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "albums/brothersinarms.jpg",
+                "question" : "What is the name of the artist and/or album?",
+                "answer" : "Brothers in Arms - Dire Straits"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "albums/inutero.jpg",
+                "question" : "What is the name of the artist and/or album?",
+                "answer" : "In Utero - Nirvana"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "albums/jaggedlittlepill.jpg",
+                "question" : "What is the name of the artist and/or album?",
+                "answer" : "Jagged Little Pill - Alanis Morissette"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "albums/wtsmg.jpg",
+                "question" : "What is the name of the artist and/or album?",
+                "answer" : "(What's the Story) Morning Glory? - Oasis"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "albums/25.jpg",
+                "question" : "What is the name of the artist and/or album?",
+                "answer" : "25 - Adele"
+            }
+        },
+        {
+            "type" : "round",
+            "data" : {
                 "question" : "The Backwards Round"
             }
         },
@@ -30,7 +146,7 @@
         {
             "type" : "backwards",
             "data" : {
-                "question" : "What Christmas film starts Macaulay Culkin as Kevin McCallister?",
+                "question" : "What Christmas film stars Macaulay Culkin as Kevin McCallister?",
                 "answer" : "Home Alone"
             }
         },
@@ -38,7 +154,7 @@
             "type" : "backwards",
             "data" : {
                 "image" : "muppets.jpg",
-                "question" : "What is the name of this film?",
+                "question" : "Name that film?",
                 "answer" : "Muppets Christmas Carol"
             }
         },

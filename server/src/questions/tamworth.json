@@ -4,7 +4,7 @@
         {
             "type" : "intro",
             "data" : {
-                "question" : "Christmas Quiz 2018!"
+                "question" : "Tamworth (kindof) Christmas Quiz 2018/2019!"
             }
         },
         {
@@ -16,49 +16,49 @@
         {
             "type" : "cinenyms",
             "data" : {
-                "question" : "Bluntly, darling, I couldn't care less",
-                "hint" : "Frankly, my dear, I don't give a damn",
-                "answer" : "Gone With The Wind"
+                "question" : "Is one conversing with myself?",
+                "hint" : "You talking to me?",
+                "answer" : "Taxi Driver"
             }
         },
         {
             "type" : "cinenyms",
             "data" : {
-                "question" : "The primary instruction, the instruction you must remember, despite his frequent whining, despite his frequent imploring, don't ever nourish him post the bewitching hour",
-                "hint" : "The most important rule, the rule you can never forget, no matter how much he cries, no matter how much he begs, never feed him after midnight.",
-                "answer" : "Gremlins"
+                "question" : "I enjoy the aroma of highly flammable sticky jelly early in the day",
+                "hint" : "I love the smell of napalm in the morning",
+                "answer" : "Apocalypse Now"
             }
         },
         {
             "type" : "cinenyms",
             "data" : {
-                "question" : "I shall prepare the gentleman a proposition he cannot decline",
-                "hint" : "I'll make him an offer he can't refuse",
-                "answer" : "The Godfather"
+                "question" : "Alien being call place of residence",
+                "hint" : "E.T. phone home",
+                "answer" : "E.T. The Extra-Terrestrial"
             }
         },
         {
             "type" : "cinenyms",
             "data" : {
-                "question" : "You were merely meant to knock the blasted portals away",
-                "hint" : "You're only supposed to blow the bloody doors off",
-                "answer" : "The Italian Job"
+                "question" : "You cannot cope with the facts",
+                "hint" : "You can't handle the truth",
+                "answer" : "A Few Good Men"
             }
         },
         {
             "type" : "cinenyms",
             "data" : {
-                "question" : "I perceive deceased folk",
-                "hint" : "I see dead people",
-                "answer" : "The Sixth Sense"
+                "question" : "My mother repeatedly told me that existence was similar to a container of confectionary",
+                "hint" : "Mama always said life was like a box of chocolates",
+                "answer" : "Forrest Gump"
             }
         },
         {
             "type" : "cinenyms",
             "data" : {
-                "question" : "There is nowhere else similar to my place of residence",
-                "hint" : "There's no place like home",
-                "answer" : "The Wizard of Oz"
+                "question" : "Please greet my small companion",
+                "hint" : "Say hello to my little friend",
+                "answer" : "Scarface"
             }
         },
         {
@@ -77,9 +77,25 @@
         {
             "type" : "cover",
             "data" : {
-                "image" : "filmposters/bttf.jpg",
+                "image" : "filmposters/bladerunner.jpg",
                 "question" : "What is the name of this film?",
-                "answer" : "Back to the Future"
+                "answer" : "Blade Runner"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/freewilly.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "Free Willy"
+            }
+        },
+        {
+            "type" : "cover",
+            "data" : {
+                "image" : "filmposters/jaws.jpg",
+                "question" : "What is the name of this film?",
+                "answer" : "Jaws"
             }
         },
         {
@@ -93,33 +109,17 @@
         {
             "type" : "cover",
             "data" : {
-                "image" : "filmposters/silenceofthelambs.jpg",
+                "image" : "filmposters/labyrinth.jpg",
                 "question" : "What is the name of this film?",
-                "answer" : "The Silence of the Lambs"
+                "answer" : "Labyrinth"
             }
         },
         {
             "type" : "cover",
             "data" : {
-                "image" : "filmposters/alien.jpg",
+                "image" : "filmposters/titanic.jpg",
                 "question" : "What is the name of this film?",
-                "answer" : "Alien"
-            }
-        },
-        {
-            "type" : "cover",
-            "data" : {
-                "image" : "filmposters/soundofmusic.jpg",
-                "question" : "What is the name of this film?",
-                "answer" : "The Sound of Music"
-            }
-        },
-        {
-            "type" : "cover",
-            "data" : {
-                "image" : "filmposters/gladiator.jpg",
-                "question" : "What is the name of this film?",
-                "answer" : "Gladiator"
+                "answer" : "Titanic"
             }
         },
         {
@@ -132,49 +132,49 @@
         {
             "type" : "cover",
             "data" : {
-                "image" : "albums/abbeyroad.jpg",
+                "image" : "albums/darkside.jpg",
                 "question" : "What is the name of the artist and/or album?",
-                "answer" : "Abbey Road - The Beatles"
+                "answer" : "Dark Side of the Moon - Pink Floyd"
             }
         },
         {
             "type" : "cover",
             "data" : {
-                "image" : "albums/brothersinarms.jpg",
+                "image" : "albums/rumours.jpg",
                 "question" : "What is the name of the artist and/or album?",
-                "answer" : "Brothers in Arms - Dire Straits"
+                "answer" : "Rumours - Fleetwood Mac"
             }
         },
         {
             "type" : "cover",
             "data" : {
-                "image" : "albums/inutero.jpg",
+                "image" : "albums/ledzeppelin.jpg",
                 "question" : "What is the name of the artist and/or album?",
-                "answer" : "In Utero - Nirvana"
+                "answer" : "Led Zeppelin - Led Zeppelin"
             }
         },
         {
             "type" : "cover",
             "data" : {
-                "image" : "albums/jaggedlittlepill.jpg",
+                "image" : "albums/tubularbells.jpg",
                 "question" : "What is the name of the artist and/or album?",
-                "answer" : "Jagged Little Pill - Alanis Morissette"
+                "answer" : "Tubular Bells - Mike Oldfield"
             }
         },
         {
             "type" : "cover",
             "data" : {
-                "image" : "albums/wtsmg.jpg",
+                "image" : "albums/americanidiot.jpg",
                 "question" : "What is the name of the artist and/or album?",
-                "answer" : "(What's the Story) Morning Glory? - Oasis"
+                "answer" : "American Idiot - Green Day"
             }
         },
         {
             "type" : "cover",
             "data" : {
-                "image" : "albums/25.jpg",
+                "image" : "albums/help.jpg",
                 "question" : "What is the name of the artist and/or album?",
-                "answer" : "25 - Adele"
+                "answer" : "Help! - The Beatles"
             }
         },
         {
@@ -187,36 +187,42 @@
             "type" : "category",
             "data" : {
                 "question" : "The Backwards Round",
-                "answer" : "Christmas Films"
+                "answer" : "Christmas"
             }
         },
         {
             "type" : "backwards",
             "data" : {
-                "question" : "Who plays Buddy in the film Elf?",
-                "answer" : "Will Ferrell"
+                "question" : "Which Christmas carol demands figgy pudding?",
+                "answer" : "We Wish You a Merry Christmas"
             }
         },
         {
             "type" : "backwards",
             "data" : {
-                "question" : "What Christmas film stars Macaulay Culkin as Kevin McCallister?",
-                "answer" : "Home Alone"
+                "question" : "Which 1954 Christmas film stars Bing Crosby and Danny Kaye",
+                "answer" : "White Christmas"
             }
         },
         {
             "type" : "backwards",
             "data" : {
-                "image" : "muppets.jpg",
-                "question" : "Name that film?",
-                "answer" : "Muppets Christmas Carol"
+                "question" : "Which song written in 1984 has topped the charts at Christmas on 3 separate occasions?",
+                "answer" : "Do They Know It's Christmas?"
             }
         },
         {
             "type" : "category",
             "data" : {
                 "question" : "The Backwards Round",
-                "answer" : "Christmas Songs"
+                "answer" : "Songs"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "The Backwards Round",
+                "answer" : "1977"
             }
         },
         {
@@ -224,8 +230,15 @@
             "data" : {
                 "image" : "song.jpg",
                 "question" : "Name that song?",
-                "answer" : "Driving Home For Christmas",
-                "song" : "drivinghomeforchristmas.mp3"
+                "answer" : "We Will Rock You",
+                "song" : "wewillrockyou.mp3"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "The Backwards Round",
+                "answer" : "1967"
             }
         },
         {
@@ -233,8 +246,15 @@
             "data" : {
                 "image" : "song.jpg",
                 "question" : "Name that song?",
-                "answer" : "Last Christmas",
-                "song" : "lastchristmas.mp3"
+                "answer" : "Lucy in the Sky with Diamons",
+                "song" : "lucyinthesky.mp3"
+            }
+        },
+        {
+            "type" : "category",
+            "data" : {
+                "question" : "The Backwards Round",
+                "answer" : "1970"
             }
         },
         {
@@ -242,8 +262,8 @@
             "data" : {
                 "image" : "song.jpg",
                 "question" : "Name that song?",
-                "answer" : "All I Want For Christmas Is You",
-                "song" : "alliwantforchristmas.mp3"
+                "answer" : "Bridge Over Troubled Water",
+                "song" : "bridgeover.mp3"
             }
         },
         {
@@ -256,96 +276,93 @@
             "type" : "category",
             "data" : {
                 "question" : "Answer Smash",
-                "answer" : "Pets"
+                "answer" : "Historical Figures"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "gimli.jpeg",
-                "question" : "Which band had their only UK number 1 with \"Rollin'\"?",
-                "answer" : "Gimlimp Bizkit"
+                "image" : "alfred.jpeg",
+                "question" : "What is the name Jerry Lee Lewis' only UK number 1 hit, written in 1957?",
+                "answer" : "Alfred the Great Balls of Fire"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "lula.jpg",
-                "question" : "Which 2017 film saw Emma Stone win the Oscar for Best Actress?",
-                "answer" : "Lula La Land"
+                "image" : "henry.jpg",
+                "question" : "On which day would you typically expect to receive a number of maids a-milking?",
+                "answer" : "Henry the Eighth Day of Christmas"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "bette.jpeg",
-                "question" : "Which alcoholic spirit is made primarily with agave nectar?",
-                "answer" : "Bettequila"
+                "image" : "hepburn.jpeg",
+                "question" : "Which Scottish celebration takes places on the 25th of January each year?",
+                "answer" : "Audrey Hepburns Night"
             }
         },
         {
             "type" : "category",
             "data" : {
                 "question" : "Answer Smash",
-                "answer" : "Christmas Food"
+                "answer" : "Christmas"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "sprouts.jpg",
-                "question" : "Creative or lateral thinking is often referred to as thinking _ ?",
-                "answer" : "Brussels Sproutside the Box"
+                "image" : "santa.jpg",
+                "question" : "What is the name for the fear of confined places?",
+                "answer" : "Santa Claustrophobia"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "pigsinblankets.jpg",
-                "question" : "What is the name for a large wave often produced after an earthquake?",
-                "answer" : "Pigs in Blanketsunami"
+                "image" : "christmastree.jpg",
+                "question" : "In The Lord of the Rings, what is the name of the Ent said by Gandalf to be the oldest living thing in Middle-earth?",
+                "answer" : "Christmas Treebeard"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "turkey.jpg",
-                "question" : "In 1987, Lloyd Grossman visited the houses of celebrities, taking viewers Through The _ ?",
-                "answer" : "Roast Turkeyhole"
+                "image" : "threewisemen.jpg",
+                "question" : "Which 1990s British sitcom starred Martin Clunes and Neil Morrissey?",
+                "answer" : "Three Wise Men Behaving Badly"
             }
         },
         {
             "type" : "category",
             "data" : {
                 "question" : "Answer Smash",
-                "answer" : "Christmas Songs"
+                "answer" : "Dangerous Animals"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "song.jpg",
-                "question" : "What is the name given to the savoury side dish consisting of a pancake-like batter baked in the oven?",
-                "answer" : "Fairytale of New Yorkshire Pudding",
-                "song" : "fairytaleofnewyork.mp3"
+                "image" : "hippo.jpg",
+                "question" : "What term, derived partly from the French for 'rotten', denotes a mixture of dried petals and spices used to perfume a room?",
+                "answer" : "Hippot-pourri"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "song.jpg",
-                "question" : "What is the name given to the practice of moving the clocks forward during the summer?",
-                "answer" : "I Wish It Could Be Christmas Every Daylight Savings Time",
-                "song" : "iwishitcouldbechristmas.mp3"
+                "image" : "mosquito.jpg",
+                "question" : "Which band had a 1983 UK top 10 single with 'Africa'",
+                "answer" : "Mosquitoto"
             }
         },
         {
             "type" : "answersmash",
             "data" : {
-                "image" : "song.jpg",
-                "question" : "What Tim Burton film about Halloween and Christmas has a lead character called Jack Skellington?",
-                "answer" : "Silent Nightmare Before Christmas",
-                "song" : "silentnight.mp3"
+                "image" : "scorpion.jpg",
+                "question" : "Which 1957 book by Jack Kerouac based on his travels across America was turned into a film in 2012?",
+                "answer" : "Scorpion The Road"
             }
         }
     ]

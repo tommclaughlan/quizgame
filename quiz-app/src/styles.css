@@ -10,6 +10,20 @@ body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
+.chip-connected {
+    background-color: #22dd22 !important;
+    color: white !important;
+}
+
+.chip-disconnected {
+    background-color: #e20911 !important;
+    color: white !important;
+}
+
+.mat-card {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
 .full-width {
     width : 100%;
 }
@@ -19,17 +33,30 @@ body {
 }
 
 .fillAvailable {
-    height: calc(100vh - 64px - 16px);
+    height: calc(100vh - 64px - 16px - 64px);
+    max-height: calc(100vh - 64px - 16px - 64px);
 }
 
 .content-center {
     text-align: center;
 }
 
-.big-button {
-    width : 200px !important;
-    height : 200px !important;
-    font-size : 72px !important;
+@media (orientation: portrait) {
+    .big-button {
+        width: calc(100vw - 16px - 32px) !important;
+        height: calc(100vw - 16px - 32px) !important;
+        font-size: calc(25vw) !important;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    }
+}
+
+@media (orientation: landscape) {
+    .big-button {
+        width: calc(100vh - 16px - 32px - 64px) !important;
+        height: calc(100vh - 16px - 32px - 64px) !important;
+        font-size: calc(25vh) !important;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    }
 }
 
 .spacer {

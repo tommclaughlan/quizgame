@@ -11,7 +11,8 @@ import {
   MatToolbarModule,
   MatTableModule,
   MatIconModule,
-  MatDividerModule
+  MatDividerModule,
+  MatChipsModule
 } from '@angular/material';
 import { LocalStorageModule } from 'angular-2-local-storage';
 
@@ -52,6 +53,7 @@ const APP_ROUTES = [
     MatTableModule,
     MatIconModule,
     MatDividerModule,
+    MatChipsModule,
     RouterModule.forRoot(APP_ROUTES),
     FlexLayoutModule,
     LocalStorageModule.withConfig({

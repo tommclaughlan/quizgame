@@ -1,5 +1,8 @@
 <div *ngIf="!ready">
     <button mat-button (click)="startGame()">Start Game</button>
+    <div class="screen-container" fxLayout="row">
+        Go to https://tinyurl.com/xmasbuzzer on your phone
+    </div>
 </div>
 <div *ngIf="ready" class="screen-container" fxLayout="row">
     <mat-card class="content-center" fxFlex="100">
@@ -16,6 +19,44 @@
             </ul>
         </div>
         <div *ngIf="getType() === 'intro'" class="fillHeight">
+            <div class="snowflakes" aria-hidden="true">
+                <div class="snowflake">
+                    ❅
+                </div>
+                <div class="snowflake">
+                    ❆
+                </div>
+                <div class="snowflake">
+                    ❅
+                </div>
+                <div class="snowflake">
+                    ❆
+                </div>
+                <div class="snowflake">
+                    ❅
+                </div>
+                <div class="snowflake">
+                    ❆
+                </div>
+                <div class="snowflake">
+                    ❅
+                </div>
+                <div class="snowflake">
+                    ❆
+                </div>
+                <div class="snowflake">
+                    ❅
+                </div>
+                <div class="snowflake">
+                    ❆
+                </div>
+                <div class="snowflake">
+                    ❅
+                </div>
+                <div class="snowflake">
+                    ❆
+                </div>
+            </div>
                 <mat-card-content class="fillHeight" fxLayout="row" fxLayoutAlign="center center">
                     <div class="title-background"></div>
                     <div class="title" fxFlex fxFlexAlign="center">

@@ -6,15 +6,23 @@
     </mat-toolbar-row>
 </mat-toolbar>
 <div *ngIf="isRegistered()">
-    <mat-card class="content-center">
+    <mat-card class="content-center fillAvailable" fxLayout="column">
+        <div fxFlex></div>
         <mat-card-content>
             <button *ngIf="!buzzed" class="big-button" mat-fab color="primary" (click)="buzz()">BUZZ</button>
             <button *ngIf="buzzed" class="big-button" mat-fab>BUZZ</button>
         </mat-card-content>
+        <div fxFlex></div>
+        <mat-card-actions>
+            <mat-chip-list fxLayout="row" fxLayoutAlign="center">
+                <mat-chip *ngIf="connected" class="chip-connected">Connected</mat-chip>
+                <mat-chip *ngIf="!connected" class="chip-disconnected" (click)="connectSocket()">Disconnected</mat-chip>
+            </mat-chip-list>
+        </mat-card-actions>
     </mat-card>
 </div>
 <div *ngIf="!isRegistered()">
-    <mat-card>
+    <mat-card class="fillAvailable" fxLayout="column">
         <mat-card-header>
             <mat-card-title>Register your buzzer</mat-card-title>
         </mat-card-header>
@@ -23,7 +31,9 @@
                 <input class="full-width" matInput placeholder="Enter Your Name" [(ngModel)]="inputName">
             </mat-form-field>
         </mat-card-content>
+        <div fxFlex></div>
         <mat-card-actions>
+            <div fxFlex></div>
             <button mat-button (click)="register(inputName)">REGISTER</button>
         </mat-card-actions>
     </mat-card>
